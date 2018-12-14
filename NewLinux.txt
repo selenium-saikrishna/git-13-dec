@@ -1,0 +1,153 @@
+du
+df
+hostname
+hostname -I
+ping google.com
+
+For sending emaail
+sudo apt-get install mailutils 
+mail -s 'subject'   'selenium.saikrishna@gmail.com'
+
+To send email with attachment
+Mail -s "Subject" to-address < Filename
+====================================================================
+Usermanagement
+-------------------
+adduser
+passwd username
+userdel -r useranme
+groupadd editorial
+chown user
+chown user:group filename
+usermod -a -G groupname username
+deluser username groupname
+
+
+chgrp group_name filename
+
+
+Services
+---------------
+sudo systemctl stop httpd
+sudo systemctl start httpd
+sudo systemctl restart httpd
+
+
+wget
+--------
+Downloading file and give a new name
+wget -O NEW_NAME URL
+
+Limit the bandwidth
+wget --limit-rate=2m URL
+
+Resuming an interrupted file
+wget -c URL
+
+Download with username and password
+wget --http-user=USER --http-password=PASSWORD URL
+finger To display all user connected to the linux 
+finder username  To display one user info
+id
+
+Search for a file with a specific name
+ find ./GFG -name sample.txt 
+
+Search a file with pattern.
+find ./GFG -name *.txt 
+
+. Find Files Using Name and Ignoring Case
+find /home -iname tecmint.txt
+
+Find Directories Using Name
+find / -type d -name Tecmint
+
+Find all shell scripts
+find . -type f -name *.sh
+
+
+ How to find and delete a file with confirmation.
+find ./GFG -name sample.txt -exec rm -i {} \
+
+Search for empty files and directories.
+find ./GFG -type f -empty
+Find all empty directories
+find /tmp -type d -empty
+Find all files with 777 permissions
+find . -type f -perm 0777 -print
+Find all files without 777 permissions
+find / -type f ! -perm 777
+Find all hidden files
+find /tmp -type f -name ".*"
+ Find all Files Based on User
+find /home -user tecmint
+Find all Files Based on Group
+find /home -group developer
+Find Particular Files of User
+find /home -user tecmint -iname "*.txt"
+Find Last 50 Days Modified Files
+find / -mtime 50
+Find 50MB Files
+find / -size 50M
+ Find Size between 50MB – 100MB
+find / -size +50M -size -100M
+Find and remove multiple files
+find . -type f -name "*.txt" -exec rm -f {} \;
+Find Files with 777 Permissions and Chmod to 644
+find / -type f -perm 0777 -print -exec chmod 644 {} \;
+Search text within multiple files.
+find ./ -type f -name "*.txt" -exec grep 'Geek'  {} \;
+
+
+Zipping
+----------
+apt-get install zip unzip
+
+To zip one file
+zip compressfile file10
+
+compress the current directory and also all sub-directories:
+zip -r backupfile.zip .
+
+To unzip
+unzip script-fol.zip 
+
+Forcibly unzip and overwrite the exisiting files
+unzip -o script-fol.zip
+
+Compress files to another directory
+zip test/zipfolder/file10.zip file10
+
+Decompressing archive to another directory
+unzip file10.zip -d ~/script-test/
+
+Compressing multiple files
+zip /mnt/zip/script.zip continue.sh hello password-gen.sh
+
+See the content of a zip file without decompressing
+unzip -l /mnt/zip/script.zip
+
+Extracting one or more file from a compressed archive
+unzip /mnt/zip/script.zip hello continue.sh -d ~/test/zipfolder/
+
+Exclude certain file during the decompression
+unzip backfile.zip -x file10 administration.sh -d /tmp
+
+Update one file or more files of the compressed archive
+zip -u backfile.zip toto papi
+
+
+vi editor
+--------------
+i,I,a,A
+Esc
+u  Undo the last change
+U undo all changes in the entire line
+dd delete lines
+3dd delete 3 line
+dw  delete word
+
+Shift+zz  or :wq  for save the file and quit
+
+
+
